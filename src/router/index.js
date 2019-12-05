@@ -9,7 +9,7 @@ import CategoryList from '@/components/pages/CategoryList'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
+  //mode: 'history',
   routes: [
     {
       path: '/', name: 'ShoppingMall', component: ShoppingMall

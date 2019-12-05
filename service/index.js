@@ -13,10 +13,12 @@ app.use(bodyParser());
 
 let user = require('./appApi/user.js')
 let goods = require('./appApi/goods.js')
+let index = require('./appApi/index.js')
 
 let router = new Router();
 router.use('/user', user.routes())
 router.use('/goods', goods.routes())
+router.use('/index', index.routes())
 
 app.use(router.routes())
 app.use(router.allowedMethods())
