@@ -49,6 +49,12 @@
                 passwordErrorMsg:'',   //当密码出现错误的时候
             }
         },
+        created(){
+            if(localStorage.userInfo){
+                Toast.success('您已经登录过了')
+                this.$router.push('/main')
+            }
+        },
         methods: {
             goBack() {
                 this.$router.go(-1)   

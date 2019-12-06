@@ -88,6 +88,30 @@
             onClickLeft(){
                 this.$router.go(-1)
             },
+            addGoodsToCart(){
+                //取出本地购物车中的商品
+                //localStorage.removeItem('cartInfo')
+                let cartInfo = localStorage.cartInfo ? JSON.parse(localStorage.cartInfo) : []
+                let isHaveGoods = cartInfo.find(cart=>cart.goodsId== this.goodsId)
+                console.log(isHaveGoods)
+                console.log(this.goodsInfo)
+                if(!isHaveGoods){
+                    let newGoodsInfo = {
+                        goodsId:this.goodsInfo.ID,
+                        name:this.goodsInfo.NAME,
+                        price:this.goodsInfo.PRESENT_PRICE,
+                        image:this.goodsInfo.IMAGE1,
+                        count:1
+                    }
+                    cartInfo.push(newGoodsInfo)  
+                    localStorage.cartInfo = JSON.stringify(cartInfo)
+                    Toast.success('添加成功')
+                }else{
+                    Toast.success('已有此商品')
+                }
+                this.$router.push({name:'Cart'})
+            }
+            
         },
     }
 </script>

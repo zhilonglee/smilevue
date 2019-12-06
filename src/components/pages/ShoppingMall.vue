@@ -212,7 +212,7 @@
         background-color:darkred;
     }
     .hot-goods{
-        height: 130rem;
+        height: 131rem;
         overflow: hidden;
         background-color: #fff;
          color:black;
